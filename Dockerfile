@@ -59,6 +59,11 @@ RUN useradd -r -s /usr/sbin/nologin -d /opt/firebird firebird && \
 
 ENV FIREBIRD=/opt/firebird
 
+# Ohne UTF-8-Locale laeuft Firebird in der C-Locale (nur ASCII) und lehnt
+# Clients mit Umlaut im Rechner- oder Benutzernamen beim Verbinden ab
+# ("Cannot transliterate character between character sets")
+ENV LANG=C.UTF-8
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 

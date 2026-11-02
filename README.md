@@ -35,5 +35,8 @@ Verbindung: `<NAS-IP>/3050:/var/lib/firebird/data/<Datenbank>`
 - `WireCrypt = Enabled` (verhandelbar): kompatibel auch mit Clients,
   die ohne Leitungsverschlüsselung arbeiten
 - Authentifizierung: Srp
+- Locale `C.UTF-8` statt der Standard-C-Locale, damit Clients mit
+  Umlauten im Rechner- oder Benutzernamen nicht an der Zeichensatz-
+  Umwandlung beim Verbinden scheitern
 - ODS 12.0 — Datenbankdateien sind 1:1 zwischen Firebird-3-Systemen
   austauschbar (Windows/Linux, x86/ARM)
